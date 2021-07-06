@@ -85,5 +85,4 @@ setRefCell(p, simple.dict(), pRefCell, pRefValue);
 mesh.setFluxRequired(p.name());
 
 #include "createMRF.H"
-#include "createIncompressibleRadiationModel.H"
 #include "createFvOptions.H"

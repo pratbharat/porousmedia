@@ -1,0 +1,25 @@
+
+1. Clean the tutorials
+$ foamCleanPolyMesh
+$ foamCleanTutorials
+
+ 
+2. Meshing 
+$ blockMesh
+
+
+3.Update D and F field using funkySetFields utilities of swak4Foam 
+$ funkySetFields -time 0 	
+
+
+4.run the solver 
+$ myVarPorousSimpleFoam > log.myVarPorousSimpleFoam &
+
+
+5. To see the running script
+$ tail -f log.myVarPorousSimpleFoam
+
+
+6. To calculate the pressure drop for porous medium, go to postProcessing folder/probe_number_1/0/p, and find the difference between probe 0 and probe 1 for the last probe time.  
+
+

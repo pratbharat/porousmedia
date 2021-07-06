@@ -1,0 +1,122 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 0.001;
+
+    vertices
+    (    
+        (0 0 0) //0
+        (0 1 0) //1
+	(10 1 0) //2
+        (10 0 0) //3
+        (0 0 1) //4
+        (0 1 1) //5
+	(10 1 1) //6
+        (10 0 1) //7
+         
+     
+       
+     );
+
+    blocks
+    (
+      // hex (0 1 8 8 4 5 9 9) (25 25 28) simpleGrading (1 1 1)	
+        // hex (0 3 2 1 4 7 6 5) (100 10 10) simpleGrading (1 1 1)
+         hex (0 3 2 1 4 7 6 5) (100 10 10) 
+         simpleGrading (  (
+                            (0.45 0.1 1) 
+			    (0.03 0.05 1) 
+                            (0.01 0.08 1)
+                            (0.01 0.27  1)
+			    (0.01 0.27  1)
+			    (0.01 0.08 1)
+			    (0.03 0.05 1) 
+                            (0.45 0.1 1) 
+                          )
+                         1
+                         1) 
+       // hex (3 5 2 3 6 8 7 6) (40 1 27) simpleGrading (1 1 1)
+       //hex (3 0 8 8 7 4 9 9) (25 25 28) simpleGrading (1 1 1)
+    );
+
+   edges
+    (
+    );
+
+   boundary
+    (
+      inlet
+        {
+      
+           type patch;
+           faces
+	   (
+             (0 4 5 1 )
+            );
+          }
+
+       outlet
+         {
+            type patch;
+             faces
+             (
+               (6 7 3 2)
+             );
+         } 
+         walls
+         {
+           type wall;
+           faces
+           (
+              (1 5 6 2)
+              (0 4 7 3)
+           );
+         } 
+       front&back
+         {
+            type wall;
+            faces
+            (
+               (0 1 2 3)
+               (4 5 6 7)
+            );
+          } 
+   );
+
+  mergePatchPairs
+  (
+
+  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+

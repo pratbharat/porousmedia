@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      funkySetFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+expressions 
+(
+        D
+     	{
+		field D;
+                 expression "tensor (1643133150, 0, 0, 0, 0, 0, 0, 0, 0)" ;
+                  condition "pos().x>=4.975e-3 && pos().x<=5.025e-3";
+          }
+       
+         F
+     	{
+		  field F;
+		  expression "tensor (849.3699319, 0, 0, 0, 0, 0, 0, 0, 0)" ;
+                  condition "pos().x>=4.975e-3 && pos().x<=5.025e-3";
+	} 
+);
+
+// ************************************************************************* //

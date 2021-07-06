@@ -4,7 +4,7 @@ swak4Foam library is used for evaluating post-processing results. So, before run
 
 Reference: Dazeo et. al.,HETEROGENEOUS POROUS MEDIA SIMULATION, Mecánica Computacional Vol XXXVI, págs. 1173-1181.
 
-# testCase_porousSimpleFoam
+# porousSimpleFoam_OF6
 Test case using the solver porousSimpleFoam with constant value of D and F.  D= 1643133150 and F =  894.3699319.
 
 # testCase_myVarPorousSimpleFoam

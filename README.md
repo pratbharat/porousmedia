@@ -17,4 +17,4 @@ Test case using the  present solver myVarPorousSimpleFoam with variable value of
 Here D(x) =  D0. (x-x0) ; \
 and  F(x) =  F0. (x-x0) ; \
 where D0 = 3283133150 and F =  1800 and x0 is the the position x where
-the medium starts. \
+the medium starts. 

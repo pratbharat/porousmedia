@@ -1,0 +1,110 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     porousSimpleFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         10000;
+
+deltaT          0.1;
+
+writeControl    timeStep;
+
+writeInterval   20;
+
+purgeWrite      5;
+
+writeFormat     binary;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+graphFormat     raw;
+
+runTimeModifiable true;
+
+libs ("libgroovyBC.so");
+
+    functions
+{
+   massFlowAverage
+   {
+       type    patchAverage;//patchMassFlowAverage; //patchIntegrate; //patchAverage;
+       functionObjectLibs
+         (
+           "libsimpleFunctionObjects.so"
+            "libsimpleFunctionObjects.so"
+            "libgroovyBC.so"
+         );
+       verbose true;
+      fields (U p);
+       patches
+         (
+           inlet
+           outlet
+         );
+       factor 1.0;
+       writeControl writeTime;
+       //outputInterval 1;
+   }
+    probe_number_1
+  {
+    type probes;
+    functionObjectLibs (
+              "libsampling.so"
+                 "libsimpleFunctionObjects.so"
+            "libsimpleFunctionObjects.so");
+   outputControl timeStep;
+   outputInterval 1;
+    region region0;
+     verbose true;
+    probeLocations
+    (
+      (0.004975 0.0005 0.0005)
+      (0.005025 0.0005 0.0005) 
+    );
+    fields
+    (
+      p
+      U
+    ); 
+  }
+
+};
+
+
+  
+libs (
+   "libswakFunctionObjects.so"
+   "libsimpleFunctionObjects.so"
+   "libgroovyBC.so"
+);
+
+
+
+
+// ************************************************************************* //

@@ -20,7 +20,7 @@
         tmp<volTensorField> tTU = tensor(I)*UEqn.A();
 
         volTensorField & AU = tTU.ref ();
-	AU = AU+nu*D + (mag(U))*F/2.0;
+	AU = AU+mu*D + (mag(U))*rho*F/2.0;
 	AU.correctBoundaryConditions ();
 
         trTU = inv(tTU());    

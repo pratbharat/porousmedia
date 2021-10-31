@@ -18,3 +18,5 @@ Here D(x) =  D0. (x-x0) ; \
 and  F(x) =  F0. (x-x0) ; \
 where D0 = 3283133150 and F =  1800 and x0 is the the position x where
 the medium starts. 
+
+Cite this work: Pratyush Kumar, Abhishek Thakur, Sandip K.Saha,Atul Sharma, Deepak Sharma, Paritosh Chaudhuri,CFD Investigation of helium gas flow in sphere packed (Pebble bed) in a rectangular canister using OpenFOAM,Fusion Engineering and Design Vol 172, págs. 1173-1181.https://doi.org/10.1016/j.fusengdes.2021.112858

@@ -17,6 +17,11 @@ IOdictionary transportProperties
      transportProperties.lookup("nu")
 ); 
 
+ dimensionedScalar mu
+(
+     transportProperties.lookup("mu")
+); 
+
 dimensionedScalar rho
 (
      transportProperties.lookup("rho")
